@@ -1,6 +1,6 @@
 const refugeAPI_Search= "https://refugerestrooms.org:443/api/v1/restrooms/search.json"
 
-function getRefugeData(searchRes, callback{
+function getRefugeData(searchRes, callback) {
 	const query= {
 		per_page: 5,
 		query: `${searchRes}`
@@ -16,7 +16,8 @@ function showRefugeData(data){
 
 function submitTrigger() {
 	$('.js-form').submit(event => {
-		event.eventDefault();
+		event.preventDefault();
+		const queryTarg= $(event.currentTarget).find('.js-search');
 		const query= queryTarg.val();
 		console.log(query);
 		queryTarg.val("");
