@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+}
+
+#map {
+        height: 100%;
+    }
+
+body {
+	margin: 150px auto 0 auto;
+	max-width: 800px;
+	text-align: center;
+	background-image: 
+		linear-gradient(
+			rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.5)
+			),
+			url(pics/bathroom-sink.jpg);
+	background-size: cover;
+	color: #FFF;
+}
+
+p, h1, li {
+	word-spacing: 5px;
+	text-shadow: #02C39A 1px 0 10px;
+}
+
+h1 { 
+	color: #00A896;
+ 	font-size: 55px;
+ 	font-family: 'Bungee', sans-serif;
+}
+
+p, li {
+	font-size: 25px;
+	font-family: 'Open Sans', serif;
+}
+
+button {
+	font-size: 20px;
+	height: 70px;
+	width: 80px;
+	border-radius: 10px;
+	border: 2px solid #086788;
+	background-color: #086788;
+	color: white;
+}
+
+.js-search {
+	border: 2px solid #086788;
+	border-radius: 10px;
+	height: 70px;
+	width: 500px;
+	font-size: 20px;
+}
+
+.darken {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(shoes.jpg);
+}
+
+.error {
+	font-size: 20px;
+	color: #dfc00a;
+	text-shadow: #000 1px 0 10px;
+}
+
+legend {
+	display: none;
+}
+
+fieldset {
+	border: none;
+}
