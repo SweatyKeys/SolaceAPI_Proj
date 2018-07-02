@@ -15,12 +15,15 @@ function getRefugeData(searchRes, callback) {
 
 function renderRes(result){
 	return`
-		<li>${result.name}
+	<div class= 'resWrap'>
+		<li>${result.street}, ${result.city}
 			<ul>
-				<li>${result.street}, ${result.city}</li>
-				<li>Accessible: ${result.accessible ? 'Yes' : 'No'}, Unisex: ${result.unisex ? 'Yes' : 'No'}, Changing Table: ${result.changing_table ? 'Yes' : 'No'}</li>
+				<li>Accessible: ${result.accessible ? 'Yes' : 'No'}</li>
+				<li> Unisex: ${result.unisex ? 'Yes' : 'No'}</li>
+				<li> Changing Table: ${result.changing_table ? 'Yes' : 'No'}</li>
 			</ul>
 		</li>
+	</div>
 `
 }
 
@@ -49,17 +52,17 @@ function submitTrigger() {
 //	initMap(obj));}
 
 
-//use loop to create pins. look at line 58 to see how pins/markers work
-//function initMap() {
-  // The location of Uluru
-//	var uluru = {lat: -25.344, lng: 131.036};
+use loop to create pins. look at line 58 to see how pins/markers work
+function initMap() {
+   //The location of Uluru
+	var uluru = {lat: -25.344, lng: 131.036};
   // The map, centered at Uluru
- //	map = new google.maps.Map(
-   // 	 document.getElementById('map'), {zoom: 4, center: uluru});
+ 	map = new google.maps.Map(
+   	document.getElementById('map'), {zoom: 4, center: uluru});
   // The marker, positioned at Uluru
-  //var marker = new google.maps.Marker({position: uluru, map: map});
-//}
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
 
-//initMap()
+initMap()
 
 $(submitTrigger);
