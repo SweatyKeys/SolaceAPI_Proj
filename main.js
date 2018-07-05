@@ -68,12 +68,17 @@ if ("geolocation" in navigator){
 
 
 function getCoords() {
-	$('.js-form').submit(function(){
-		console.log('yep');
-		const lat = position.coords.latitude;
-		const longitude = position.coords.longitude;
-		navigator.geolocation.getCurrentPosition
+	navigator.geolocation.getCurrentPosition(function(position) {
+		const lat= position.coords.latitude;
+		const long= position.coords.longitude;
+		initMap(lat, long);
+		showCoords(lat, long);
 	});
+		console.log('yep');
+}
+
+function showCoords(lat, long) {
+	console.log(lat, long);
 }
 
 
@@ -87,10 +92,10 @@ function renderMarker (item) {
 
 // google maps api initMap()
 
-function initMap() {
+function initMap(lat, long) {
 
    //The location of Uluru
-	var originalPosition = {lat: -25.344, lng: 131.036};
+	var originalPosition = {lat:lat, lng: long};
   //The map, centered at Uluru
 	map = new google.maps.Map(
   	document.getElementById('map'), {zoom: 4, center: originalPosition});
@@ -102,5 +107,6 @@ function initMap() {
 // handler for documents to load
 $( document ).ready(function() {
     submitTrigger();
-    initMap();
+    // initMap();
+    getCoords();
 }); 
