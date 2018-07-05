@@ -1,5 +1,7 @@
 const refugeAPI_Search= "https://refugerestrooms.org:443/api/v1/restrooms/search.json"
-//let map
+
+// map global
+// let map
 
 function getRefugeData(searchRes, callback) {
 	console.log(searchRes)
@@ -13,6 +15,9 @@ function getRefugeData(searchRes, callback) {
 	
 }
 
+
+
+// Rendering results from refuge into html
 function renderRes(result){
 	return`
 	<div class= 'resWrap'>
@@ -27,18 +32,24 @@ function renderRes(result){
 `
 }
 
+
+// looping through data from refuge API to render the results and position markers
 function showRefugeData(data){
-	console.log(data);
+	
 	if (data.length < 1){
 		$('.js-results').html('<p class= "error">Hmm, address not recognized. Check spelling or try new address!</p>')
 	}
 	else {
-	const results= data.map((obj) => 
-	renderRes(obj));
+	const results= data.map((obj) => {
+		renderRes(obj)
+		renderMarker(obj)
+	})
 	$('.js-results').html(`<ol>${results}</ol>`);}
 }
-	
 
+
+	
+// event listener to request search data from refugeAPI
 function submitTrigger() {
 	$('.js-form').submit(event => {
 		event.preventDefault();
@@ -47,25 +58,49 @@ function submitTrigger() {
 	});
 }
 
-//const markers= data.map((obj) =>
-//	if(data.length > 0){
-//	initMap(obj));}
 
-
-//use loop to create pins. look at line 58 to see how pins/markers work
-
-
-
-function initMap() {
-   //The location of Uluru
-	var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
- 	map = new google.maps.Map(
-   	document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
+// geolocation
+if ("geolocation" in navigator){
+	console.log('yeehaw');
+} else {
+	console.log('naaaahawwww')
 }
 
- initMap()
 
-$(submitTrigger);
+function getCoords() {
+	$('.js-form').submit(function(){
+		console.log('yep');
+		const lat = position.coords.latitude;
+		const longitude = position.coords.longitude;
+		navigator.geolocation.getCurrentPosition
+	});
+}
+
+
+
+// Show markers from refuge data
+function renderMarker (item) {
+	  new google.maps.Marker({position: {lat: item.latitude, lng: item.longitude}, map: map});
+}
+
+
+
+// google maps api initMap()
+
+function initMap() {
+
+   //The location of Uluru
+	var originalPosition = {lat: -25.344, lng: 131.036};
+  //The map, centered at Uluru
+	map = new google.maps.Map(
+  	document.getElementById('map'), {zoom: 4, center: originalPosition});
+   
+}
+
+
+
+// handler for documents to load
+$( document ).ready(function() {
+    submitTrigger();
+    initMap();
+}); 
