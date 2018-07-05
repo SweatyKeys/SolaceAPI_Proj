@@ -4,25 +4,19 @@
 
 
 #map {
-	height: 200px;
+	height: 400px;
+	margin: 40px 0;
 }
 
 body {
 	margin: 150px auto 0 auto;
 	max-width: 800px;
 	text-align: center;
-	/*background-image: 
-		linear-gradient(
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0.5)
-			),
-			url(pics/bathroom-sink.jpg);
-	background-size: cover;*/
 	background-color: #0D0221;
 }
 
 .js-results {
-	margin: 20px;
+	margin: 30px;
 	max-width: 800px;
 }
 
@@ -41,6 +35,7 @@ p, li {
 	font-size: 25px;
 	font-family: 'Open Sans', serif;
 }
+
 
 
 .resWrap {
@@ -70,18 +65,6 @@ button {
 	font-size: 20px;
 }
 
-ol {
-	margin-bottom: 20px;
-}
-
-/*.darken {
-  background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url(shoes.jpg);
-}*/
 
 .error {
 	font-size: 20px;

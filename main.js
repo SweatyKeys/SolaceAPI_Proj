@@ -4,7 +4,6 @@ const refugeAPI_Search= "https://refugerestrooms.org:443/api/v1/restrooms/search
 // let map
 
 function getRefugeData(searchRes, callback) {
-	console.log(searchRes)
 	const query= {
 		per_page: 5,
 		query: `${searchRes}`
@@ -41,6 +40,7 @@ function showRefugeData(data){
 	}
 	else {
 	const results= data.map((obj) => {
+		console.log(obj);
 		renderRes(obj)
 		renderMarker(obj)
 	})
@@ -59,28 +59,15 @@ function submitTrigger() {
 }
 
 
-// geolocation
-if ("geolocation" in navigator){
-	console.log('yeehaw');
-} else {
-	console.log('naaaahawwww')
-}
-
+// find current user location using navigator.geolocation
 
 function getCoords() {
 	navigator.geolocation.getCurrentPosition(function(position) {
 		const lat= position.coords.latitude;
 		const long= position.coords.longitude;
 		initMap(lat, long);
-		showCoords(lat, long);
 	});
-		console.log('yep');
 }
-
-function showCoords(lat, long) {
-	console.log(lat, long);
-}
-
 
 
 // Show markers from refuge data
@@ -95,10 +82,10 @@ function renderMarker (item) {
 function initMap(lat, long) {
 
    //The location of Uluru
-	var originalPosition = {lat:lat, lng: long};
+	var originalPosition = {lat: +lat, lng: +long};
   //The map, centered at Uluru
 	map = new google.maps.Map(
-  	document.getElementById('map'), {zoom: 4, center: originalPosition});
+  	document.getElementById('map'), {zoom: 12, center: originalPosition});
    
 }
 
