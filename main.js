@@ -1,7 +1,9 @@
+
+'use strict';
 const refugeAPI_Search= "https://refugerestrooms.org:443/api/v1/restrooms/search.json"
 
 // map global
-// let map
+let map
 
 function getRefugeData(searchRes, callback) {
 	const query= {
@@ -18,6 +20,7 @@ function getRefugeData(searchRes, callback) {
 
 // Rendering results from refuge into html
 function renderRes(result){
+	console.log(result);
 	return`
 	<div class= 'resWrap'>
 		<li>${result.street}, ${result.city}
@@ -34,18 +37,15 @@ function renderRes(result){
 
 // looping through data from refuge API to render the results and position markers
 function showRefugeData(data){
-	
 	if (data.length < 1){
 		$('.js-results').html('<p class= "error">Hmm, address not recognized. Check spelling or try new address!</p>')
 	}
 	else {
-	const results= data.map((obj) => {
-		console.log(obj);
-		renderRes(obj)
-		renderMarker(obj)
-	})
+	const results= data.map((obj) => 
+		renderRes(obj));
+		renderMarker(obj);
 	$('.js-results').html(`<ol>${results}</ol>`);}
-}
+ }
 
 
 	
@@ -81,9 +81,9 @@ function renderMarker (item) {
 
 function initMap(lat, long) {
 
-   //The location of Uluru
+   //Users current location provided by getCoords
 	var originalPosition = {lat: +lat, lng: +long};
-  //The map, centered at Uluru
+  //The map, centered at user's postion
 	map = new google.maps.Map(
   	document.getElementById('map'), {zoom: 12, center: originalPosition});
    
@@ -93,7 +93,7 @@ function initMap(lat, long) {
 
 // handler for documents to load
 $( document ).ready(function() {
-    submitTrigger();
-    // initMap();
+	submitTrigger();
+    initMap();
     getCoords();
-}); 
+}) 

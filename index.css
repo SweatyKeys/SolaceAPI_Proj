@@ -5,7 +5,7 @@
 
 #map {
 	height: 400px;
-	margin: 40px 0;
+	/*margin: 40px 0;*/
 }
 
 body {
@@ -16,13 +16,13 @@ body {
 }
 
 .js-results {
-	margin: 30px;
+	
 	max-width: 800px;
 }
 
 p, h1, li {
 	word-spacing: 5px;
-	/*text-shadow: #C2E7D9 1px 0 10px;*/
+	
 	color: #A6CFD5;
 }
 
@@ -40,8 +40,12 @@ p, li {
 
 .resWrap {
 	border: solid 1px #A6CFD5;
-}
 
+
+/*ol {
+	margin: 30px;
+	height: auto;
+}*/
 
 ul {
 	list-style-type: none;
