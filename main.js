@@ -43,7 +43,8 @@ function showRefugeData(data){
 	else {
 	const results= data.map((obj) => 
 		renderRes(obj));
-		renderMarker(obj);
+	const maker= data.map((obj) =>
+		renderMarker(obj));
 	$('.js-results').html(`<ol>${results}</ol>`);}
  }
 
