@@ -60,6 +60,8 @@ function submitTrigger() {
 }
 
 
+$('.js-form')
+
 // find current user location using navigator.geolocation
 
 function getCoords() {
@@ -86,7 +88,7 @@ function initMap(lat, long) {
 	var originalPosition = {lat: +lat, lng: +long};
   //The map, centered at user's postion
 	map = new google.maps.Map(
-  	document.getElementById('map'), {zoom: 12, center: originalPosition});
+  	document.getElementById('map'), {zoom: 11, center: originalPosition});
    
 }
 

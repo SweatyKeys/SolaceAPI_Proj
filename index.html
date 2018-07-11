@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content= "width=device-width">
-		<script
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content= "width=device-width">
+        <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-		<title> Solace | Public Restroom Locator</title>
-		<link href="https://fonts.googleapis.com/css?family=Bungee|Open+Sans:600" rel="stylesheet">
-		<link href="index.css" rel="stylesheet" type="text/css"
-	</head>
-	<body>
-		
-		<h1> Solace Public Restroom Locator</h1>
-		<p>Find solace from the unexpected events within us. Use the address to your current location to find the closest five restrooms to your location</p>
+        <title> Solace | Public Restroom Locator</title>
+        <link href="https://fonts.googleapis.com/css?family=Bungee%7COpen+Sans:600" rel="stylesheet">
+        <link href="index.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
 
-			<form action= # class= "js-form">
-				<fieldset>
-					<legend>Enter address of current location</legend>
-					<input type="text" class="js-search" placeholder= "123 Address st. City Name, State and Zip">
-					<button type="submit">Search</button>
-				</fieldset>
-			</form>
-		<div id="map"></div>
-			
-			
-		<main>
-			<div class= 'js-results'></div>	
-		</main>
-		
-		
-		<script async defer
+        <h1 id= "move"> Solace Public Restroom Locator</h1>
+        <p>Find solace from the unexpected events within us. Search the current city you're in to see the top 5 results. After submitting you're search, scroll down to see the results:</p>
+
+            <form class= "js-form">
+                <fieldset>
+                    <legend>Enter address of current location</legend>
+                    <input type="text" class="js-search" placeholder= "123 Address st. City Name, State and Zip">            
+                   	<button type="submit">Search</button>                              
+                </fieldset>
+            </form>
+        <div id="map"></div>
+
+
+        <main>
+            <div class= 'js-results'></div>
+        </main>
+
+
+        <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqFMtFsdAdVFNzE01kNrbNthixXOQgtWI&callback=initMap">
-    	<!-- </script> -->
-    	<script src= "main.js"></script>
-		
-	</body>
+        <!-- </script> -->
+        <script src= "main.js"></script>
+
+    </body>
+</html>
+ 
 </html>
