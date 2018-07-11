@@ -60,7 +60,7 @@ function submitTrigger() {
 }
 
 
-$('.js-form')
+
 
 // find current user location using navigator.geolocation
 
