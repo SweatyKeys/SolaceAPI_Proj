@@ -92,11 +92,12 @@ function initMap(lat, long) {
    
 }
 
-
+   
 
 // handler for documents to load
 $( document ).ready(function() {
 	submitTrigger();
-    initMap();
+	initMap();
+ 
     getCoords();
 }) 
