@@ -13,21 +13,22 @@
     </head>
     <body>
 
-        <h1 id= "move"> Solace Public Restroom Locator</h1>
+        <h1> Solace Public Restroom Locator</h1>
         <p>Find solace from the unexpected events within us. Search the current city including state/province you're in to see the top 5 results. After submitting you're search, scroll down to see the results:</p>
 
             <form class= "js-form">
                 <fieldset>
                     <legend>Enter address of current location</legend>
-                    <input type="text" class="js-search" placeholder= "City, State/Province">            
+                    <label>Enter current City, State/Provice in the field below:</label>
+                    <input type="text" class="js-search" placeholder= "City, State/Province" required>            
                    	<button type="submit">Search</button>                              
                 </fieldset>
             </form>
         <section role= "region" id="map"></section>
 
 
-        <main role= "main">
-            <section class= 'js-results'></section>
+        <main role= "main" class= 'js-results' aria-live: "assertive">
+          
         </main>
 
 

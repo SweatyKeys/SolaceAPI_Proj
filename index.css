@@ -22,7 +22,7 @@ body {
    width: 98%;
 }
 
-p, h1, li {
+p, h1, li, label {
     word-spacing: 5px;
 
     color: #C2E7D9;
